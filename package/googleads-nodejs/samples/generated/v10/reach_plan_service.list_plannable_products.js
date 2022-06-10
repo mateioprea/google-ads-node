@@ -27,7 +27,7 @@ function main(plannableLocationId) {
    */
   /**
    *  Required. The ID of the selected location for planning. To list the available
-   *  plannable location ids use ReachPlanService.ListPlannableLocations google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations.
+   *  plannable location IDs use ReachPlanService.ListPlannableLocations google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations.
    */
   // const plannableLocationId = 'abc123'
 

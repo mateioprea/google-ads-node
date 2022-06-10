@@ -30,7 +30,7 @@ function main(customerId, plannableLocationId, currencyCode, budgetMicros) {
    */
   // const customerId = 'abc123'
   /**
-   *  Required. The ID of the location, this is one of the ids returned by
+   *  Required. The ID of the location, this is one of the IDs returned by
    *  ReachPlanService.ListPlannableLocations google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations.
    */
   // const plannableLocationId = 'abc123'

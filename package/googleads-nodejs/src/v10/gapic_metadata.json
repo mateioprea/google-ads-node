@@ -1097,6 +1097,30 @@
         }
       }
     },
+    "CampaignGroupService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "CampaignGroupServiceClient",
+          "rpcs": {
+            "MutateCampaignGroups": {
+              "methods": [
+                "mutateCampaignGroups"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "CampaignGroupServiceClient",
+          "rpcs": {
+            "MutateCampaignGroups": {
+              "methods": [
+                "mutateCampaignGroups"
+              ]
+            }
+          }
+        }
+      }
+    },
     "CampaignLabelService": {
       "clients": {
         "grpc": {
@@ -2261,6 +2285,11 @@
         "grpc": {
           "libraryClient": "KeywordPlanIdeaServiceClient",
           "rpcs": {
+            "GenerateKeywordHistoricalMetrics": {
+              "methods": [
+                "generateKeywordHistoricalMetrics"
+              ]
+            },
             "GenerateKeywordIdeas": {
               "methods": [
                 "generateKeywordIdeas",
@@ -2273,6 +2302,11 @@
         "grpc-fallback": {
           "libraryClient": "KeywordPlanIdeaServiceClient",
           "rpcs": {
+            "GenerateKeywordHistoricalMetrics": {
+              "methods": [
+                "generateKeywordHistoricalMetrics"
+              ]
+            },
             "GenerateKeywordIdeas": {
               "methods": [
                 "generateKeywordIdeas",

@@ -104,6 +104,24 @@
                             }
                           }
                         },
+                        "AdDiscoveryCarouselCardAsset": {
+                          "oneofs": {
+                            "_asset": {
+                              "oneof": [
+                                "asset"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "asset": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
                         "AdAssetPolicySummary": {
                           "fields": {
                             "policy_topic_entries": {
@@ -1063,6 +1081,14 @@
                               "rule": "repeated",
                               "type": "AdImageAsset",
                               "id": 6
+                            },
+                            "breadcrumb1": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "breadcrumb2": {
+                              "type": "string",
+                              "id": 8
                             }
                           }
                         },
@@ -1725,6 +1751,122 @@
                             }
                           }
                         },
+                        "DiscoveryMultiAssetAdInfo": {
+                          "oneofs": {
+                            "_business_name": {
+                              "oneof": [
+                                "business_name"
+                              ]
+                            },
+                            "_call_to_action_text": {
+                              "oneof": [
+                                "call_to_action_text"
+                              ]
+                            },
+                            "_lead_form_only": {
+                              "oneof": [
+                                "lead_form_only"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "marketing_images": {
+                              "rule": "repeated",
+                              "type": "AdImageAsset",
+                              "id": 1
+                            },
+                            "square_marketing_images": {
+                              "rule": "repeated",
+                              "type": "AdImageAsset",
+                              "id": 2
+                            },
+                            "portrait_marketing_images": {
+                              "rule": "repeated",
+                              "type": "AdImageAsset",
+                              "id": 3
+                            },
+                            "logo_images": {
+                              "rule": "repeated",
+                              "type": "AdImageAsset",
+                              "id": 4
+                            },
+                            "headlines": {
+                              "rule": "repeated",
+                              "type": "AdTextAsset",
+                              "id": 5
+                            },
+                            "descriptions": {
+                              "rule": "repeated",
+                              "type": "AdTextAsset",
+                              "id": 6
+                            },
+                            "business_name": {
+                              "type": "string",
+                              "id": 7,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "call_to_action_text": {
+                              "type": "string",
+                              "id": 8,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "lead_form_only": {
+                              "type": "bool",
+                              "id": 9,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "DiscoveryCarouselAdInfo": {
+                          "fields": {
+                            "business_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "logo_image": {
+                              "type": "AdImageAsset",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "headline": {
+                              "type": "AdTextAsset",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "description": {
+                              "type": "AdTextAsset",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "call_to_action_text": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "carousel_cards": {
+                              "rule": "repeated",
+                              "type": "AdDiscoveryCarouselCardAsset",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            }
+                          }
+                        },
                         "YoutubeVideoAsset": {
                           "oneofs": {
                             "_youtube_video_id": {
@@ -1948,6 +2090,11 @@
                               "type": "LeadFormField",
                               "id": 8
                             },
+                            "custom_question_fields": {
+                              "rule": "repeated",
+                              "type": "LeadFormCustomQuestionField",
+                              "id": 23
+                            },
                             "delivery_methods": {
                               "rule": "repeated",
                               "type": "LeadFormDeliveryMethod",
@@ -1988,6 +2135,25 @@
                           "fields": {
                             "input_type": {
                               "type": "google.ads.googleads.v10.enums.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType",
+                              "id": 1
+                            },
+                            "single_choice_answers": {
+                              "type": "LeadFormSingleChoiceAnswers",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "LeadFormCustomQuestionField": {
+                          "oneofs": {
+                            "answers": {
+                              "oneof": [
+                                "single_choice_answers"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "custom_question_text": {
+                              "type": "string",
                               "id": 1
                             },
                             "single_choice_answers": {
@@ -2458,6 +2624,560 @@
                             }
                           }
                         },
+                        "DynamicRealEstateAsset": {
+                          "fields": {
+                            "listing_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "listing_name": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "city_name": {
+                              "type": "string",
+                              "id": 3
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "address": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "price": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "property_type": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "listing_type": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 10
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 12
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 13
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 14
+                            },
+                            "similar_listing_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 15
+                            }
+                          }
+                        },
+                        "DynamicCustomAsset": {
+                          "fields": {
+                            "id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "id2": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "item_title": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "item_subtitle": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "item_description": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "item_address": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "item_category": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "price": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "sale_price": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 10
+                            },
+                            "formatted_sale_price": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 12
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 13
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 14
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 16
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 17
+                            },
+                            "similar_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 15
+                            }
+                          }
+                        },
+                        "DynamicHotelsAndRentalsAsset": {
+                          "fields": {
+                            "property_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "property_name": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 3
+                            },
+                            "destination_name": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "price": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "sale_price": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "star_rating": {
+                              "type": "int64",
+                              "id": 8
+                            },
+                            "category": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 10
+                            },
+                            "address": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 12
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 13
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 14
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 15
+                            },
+                            "formatted_sale_price": {
+                              "type": "string",
+                              "id": 16
+                            },
+                            "similar_property_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 17
+                            }
+                          }
+                        },
+                        "DynamicFlightsAsset": {
+                          "fields": {
+                            "destination_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "origin_id": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "flight_description": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "destination_name": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "origin_name": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "flight_price": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "flight_sale_price": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "formatted_sale_price": {
+                              "type": "string",
+                              "id": 10
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 12
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 13
+                            },
+                            "similar_destination_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 14
+                            },
+                            "custom_mapping": {
+                              "type": "string",
+                              "id": 15
+                            }
+                          }
+                        },
+                        "DiscoveryCarouselCardAsset": {
+                          "fields": {
+                            "marketing_image_asset": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "square_marketing_image_asset": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "portrait_marketing_image_asset": {
+                              "type": "string",
+                              "id": 3
+                            },
+                            "headline": {
+                              "type": "string",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "call_to_action_text": {
+                              "type": "string",
+                              "id": 5
+                            }
+                          }
+                        },
+                        "DynamicTravelAsset": {
+                          "fields": {
+                            "destination_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "origin_id": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "title": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "destination_name": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "destination_address": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "origin_name": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "price": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "sale_price": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "formatted_sale_price": {
+                              "type": "string",
+                              "id": 10
+                            },
+                            "category": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 12
+                            },
+                            "similar_destination_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 13
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 14
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 15
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 16
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 17
+                            }
+                          }
+                        },
+                        "DynamicLocalAsset": {
+                          "fields": {
+                            "deal_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "deal_name": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "subtitle": {
+                              "type": "string",
+                              "id": 3
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "price": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "sale_price": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "address": {
+                              "type": "string",
+                              "id": 8
+                            },
+                            "category": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 10
+                            },
+                            "formatted_price": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "formatted_sale_price": {
+                              "type": "string",
+                              "id": 12
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 13
+                            },
+                            "similar_deal_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 14
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 15
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 16
+                            }
+                          }
+                        },
+                        "DynamicJobsAsset": {
+                          "fields": {
+                            "job_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "location_id": {
+                              "type": "string",
+                              "id": 2
+                            },
+                            "job_title": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "job_subtitle": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "description": {
+                              "type": "string",
+                              "id": 5
+                            },
+                            "image_url": {
+                              "type": "string",
+                              "id": 6
+                            },
+                            "job_category": {
+                              "type": "string",
+                              "id": 7
+                            },
+                            "contextual_keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 8
+                            },
+                            "address": {
+                              "type": "string",
+                              "id": 9
+                            },
+                            "salary": {
+                              "type": "string",
+                              "id": 10
+                            },
+                            "android_app_link": {
+                              "type": "string",
+                              "id": 11
+                            },
+                            "similar_job_ids": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 12
+                            },
+                            "ios_app_link": {
+                              "type": "string",
+                              "id": 13
+                            },
+                            "ios_app_store_id": {
+                              "type": "int64",
+                              "id": 14
+                            }
+                          }
+                        },
                         "KeywordInfo": {
                           "oneofs": {
                             "_text": {
@@ -2632,6 +3352,10 @@
                                 "product_custom_attribute",
                                 "product_item_id",
                                 "product_type",
+                                "product_grouping",
+                                "product_labels",
+                                "product_legacy_condition",
+                                "product_type_full",
                                 "unknown_listing_dimension"
                               ]
                             }
@@ -2688,6 +3412,22 @@
                             "product_type": {
                               "type": "ProductTypeInfo",
                               "id": 12
+                            },
+                            "product_grouping": {
+                              "type": "ProductGroupingInfo",
+                              "id": 17
+                            },
+                            "product_labels": {
+                              "type": "ProductLabelsInfo",
+                              "id": 18
+                            },
+                            "product_legacy_condition": {
+                              "type": "ProductLegacyConditionInfo",
+                              "id": 19
+                            },
+                            "product_type_full": {
+                              "type": "ProductTypeFullInfo",
+                              "id": 20
                             },
                             "unknown_listing_dimension": {
                               "type": "UnknownListingDimensionInfo",
@@ -2920,6 +3660,78 @@
                             "level": {
                               "type": "google.ads.googleads.v10.enums.ProductTypeLevelEnum.ProductTypeLevel",
                               "id": 2
+                            }
+                          }
+                        },
+                        "ProductGroupingInfo": {
+                          "oneofs": {
+                            "_value": {
+                              "oneof": [
+                                "value"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "value": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "ProductLabelsInfo": {
+                          "oneofs": {
+                            "_value": {
+                              "oneof": [
+                                "value"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "value": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "ProductLegacyConditionInfo": {
+                          "oneofs": {
+                            "_value": {
+                              "oneof": [
+                                "value"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "value": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "ProductTypeFullInfo": {
+                          "oneofs": {
+                            "_value": {
+                              "oneof": [
+                                "value"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "value": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
                             }
                           }
                         },
@@ -5479,6 +6291,11 @@
                               "oneof": [
                                 "high_top_of_page_bid_micros"
                               ]
+                            },
+                            "_average_cpc_micros": {
+                              "oneof": [
+                                "average_cpc_micros"
+                              ]
                             }
                           },
                           "fields": {
@@ -5518,6 +6335,13 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "average_cpc_micros": {
+                              "type": "int64",
+                              "id": 11,
+                              "options": {
+                                "proto3_optional": true
+                              }
                             }
                           }
                         },
@@ -5536,6 +6360,10 @@
                               "options": {
                                 "proto3_optional": true
                               }
+                            },
+                            "include_average_cpc": {
+                              "type": "bool",
+                              "id": 2
                             }
                           }
                         },
@@ -8587,6 +9415,10 @@
                                 "proto3_optional": true
                               }
                             },
+                            "sk_ad_network_attribution_credit": {
+                              "type": "google.ads.googleads.v10.enums.SkAdNetworkAttributionCreditEnum.SkAdNetworkAttributionCredit",
+                              "id": 144
+                            },
                             "asset_interaction_target": {
                               "type": "AssetInteractionTarget",
                               "id": 139,
@@ -10646,6 +11478,13 @@
                                 "COMPANY_NAME": 13,
                                 "WORK_PHONE": 14,
                                 "JOB_TITLE": 15,
+                                "GOVERNMENT_ISSUED_ID_CPF_BR": 16,
+                                "GOVERNMENT_ISSUED_ID_DNI_AR": 17,
+                                "GOVERNMENT_ISSUED_ID_DNI_PE": 18,
+                                "GOVERNMENT_ISSUED_ID_RUT_CL": 19,
+                                "GOVERNMENT_ISSUED_ID_CC_CO": 20,
+                                "GOVERNMENT_ISSUED_ID_CI_EC": 21,
+                                "GOVERNMENT_ISSUED_ID_RFC_MX": 22,
                                 "FIRST_NAME": 23,
                                 "LAST_NAME": 24,
                                 "VEHICLE_MODEL": 1001,
@@ -10896,7 +11735,8 @@
                                 "LOCAL": 8,
                                 "SMART": 9,
                                 "PERFORMANCE_MAX": 10,
-                                "LOCAL_SERVICES": 11
+                                "LOCAL_SERVICES": 11,
+                                "DISCOVERY": 12
                               }
                             }
                           }
@@ -11310,7 +12150,8 @@
                                 "HOTEL_PRICE": 53,
                                 "PRICE_EXTENSION": 54,
                                 "HOTEL_BOOK_ON_GOOGLE_ROOM_SELECTION": 55,
-                                "SHOPPING_COMPARISON_LISTING": 56
+                                "SHOPPING_COMPARISON_LISTING": 56,
+                                "CROSS_NETWORK": 57
                               }
                             }
                           }
@@ -11631,6 +12472,20 @@
                                 "UNAVAILABLE": 2,
                                 "INTERACTION": 3,
                                 "VIEW": 4
+                              }
+                            }
+                          }
+                        },
+                        "SkAdNetworkAttributionCreditEnum": {
+                          "fields": {},
+                          "nested": {
+                            "SkAdNetworkAttributionCredit": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "UNAVAILABLE": 2,
+                                "WON": 3,
+                                "CONTRIBUTED": 4
                               }
                             }
                           }
@@ -12133,7 +12988,9 @@
                                 "SMART_CAMPAIGN_AD": 31,
                                 "CALL_AD": 32,
                                 "APP_PRE_REGISTRATION_AD": 33,
-                                "IN_FEED_VIDEO_AD": 34
+                                "IN_FEED_VIDEO_AD": 34,
+                                "DISCOVERY_MULTI_ASSET_AD": 35,
+                                "DISCOVERY_CAROUSEL_AD": 36
                               }
                             }
                           }
@@ -12332,7 +13189,14 @@
                                 "UNKNOWN": 1,
                                 "PAGE_FEED": 2,
                                 "DYNAMIC_EDUCATION": 3,
-                                "MERCHANT_CENTER_FEED": 4
+                                "MERCHANT_CENTER_FEED": 4,
+                                "DYNAMIC_REAL_ESTATE": 5,
+                                "DYNAMIC_CUSTOM": 6,
+                                "DYNAMIC_HOTELS_AND_RENTALS": 7,
+                                "DYNAMIC_FLIGHTS": 8,
+                                "DYNAMIC_TRAVEL": 9,
+                                "DYNAMIC_LOCAL": 10,
+                                "DYNAMIC_JOBS": 11
                               }
                             }
                           }
@@ -12360,7 +13224,15 @@
                                 "HOTEL_CALLOUT": 15,
                                 "CALL": 16,
                                 "PRICE": 17,
-                                "CALL_TO_ACTION": 18
+                                "CALL_TO_ACTION": 18,
+                                "DYNAMIC_REAL_ESTATE": 19,
+                                "DYNAMIC_CUSTOM": 20,
+                                "DYNAMIC_HOTELS_AND_RENTALS": 21,
+                                "DYNAMIC_FLIGHTS": 22,
+                                "DISCOVERY_CAROUSEL_CARD": 23,
+                                "DYNAMIC_TRAVEL": 24,
+                                "DYNAMIC_LOCAL": 25,
+                                "DYNAMIC_JOBS": 26
                               }
                             }
                           }
@@ -12707,6 +13579,19 @@
                             }
                           }
                         },
+                        "CampaignGroupStatusEnum": {
+                          "fields": {},
+                          "nested": {
+                            "CampaignGroupStatus": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "ENABLED": 2,
+                                "REMOVED": 3
+                              }
+                            }
+                          }
+                        },
                         "CampaignServingStatusEnum": {
                           "fields": {},
                           "nested": {
@@ -12795,7 +13680,10 @@
                                 "ASSET": 14,
                                 "CUSTOMER_ASSET": 15,
                                 "CAMPAIGN_ASSET": 16,
-                                "AD_GROUP_ASSET": 17
+                                "AD_GROUP_ASSET": 17,
+                                "ASSET_SET": 18,
+                                "ASSET_SET_ASSET": 19,
+                                "CAMPAIGN_ASSET_SET": 20
                               }
                             }
                           }
@@ -12951,6 +13839,19 @@
                                 "ACTIVATION_NEEDED": 2,
                                 "ENABLED": 3,
                                 "PAUSED": 4
+                              }
+                            }
+                          }
+                        },
+                        "ConversionEnvironmentEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionEnvironment": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "APP": 2,
+                                "WEB": 3
                               }
                             }
                           }
@@ -13928,7 +14829,8 @@
                                 "UNKNOWN": 1,
                                 "THIRD_PARTY_APP_ANALYTICS": 2,
                                 "DATA_PARTNER": 3,
-                                "GOOGLE_ADS": 4
+                                "GOOGLE_ADS": 4,
+                                "HOTEL_CENTER": 5
                               }
                             }
                           }
@@ -14597,6 +15499,7 @@
                                 "BIDDING_STRATEGIES_PER_CUSTOMER": 45,
                                 "BASIC_USER_LISTS_PER_CUSTOMER": 47,
                                 "LOGICAL_USER_LISTS_PER_CUSTOMER": 48,
+                                "RULE_BASED_USER_LISTS_PER_CUSTOMER": 153,
                                 "BASE_AD_GROUP_ADS_PER_CUSTOMER": 53,
                                 "EXPERIMENT_AD_GROUP_ADS_PER_CUSTOMER": 54,
                                 "AD_GROUP_ADS_PER_CAMPAIGN": 55,
@@ -14637,6 +15540,20 @@
                                 "DYNAMIC_EDUCATION_FEED_ASSET_SETS_PER_CUSTOMER": 158,
                                 "ASSETS_PER_PAGE_FEED_ASSET_SET": 159,
                                 "ASSETS_PER_DYNAMIC_EDUCATION_FEED_ASSET_SET": 160,
+                                "DYNAMIC_REAL_ESTATE_ASSET_SETS_PER_CUSTOMER": 161,
+                                "ASSETS_PER_DYNAMIC_REAL_ESTATE_ASSET_SET": 162,
+                                "DYNAMIC_CUSTOM_ASSET_SETS_PER_CUSTOMER": 163,
+                                "ASSETS_PER_DYNAMIC_CUSTOM_ASSET_SET": 164,
+                                "DYNAMIC_HOTELS_AND_RENTALS_ASSET_SETS_PER_CUSTOMER": 165,
+                                "ASSETS_PER_DYNAMIC_HOTELS_AND_RENTALS_ASSET_SET": 166,
+                                "DYNAMIC_LOCAL_ASSET_SETS_PER_CUSTOMER": 167,
+                                "ASSETS_PER_DYNAMIC_LOCAL_ASSET_SET": 168,
+                                "DYNAMIC_FLIGHTS_ASSET_SETS_PER_CUSTOMER": 169,
+                                "ASSETS_PER_DYNAMIC_FLIGHTS_ASSET_SET": 170,
+                                "DYNAMIC_TRAVEL_ASSET_SETS_PER_CUSTOMER": 171,
+                                "ASSETS_PER_DYNAMIC_TRAVEL_ASSET_SET": 172,
+                                "DYNAMIC_JOBS_ASSET_SETS_PER_CUSTOMER": 173,
+                                "ASSETS_PER_DYNAMIC_JOBS_ASSET_SET": 174,
                                 "VERSIONS_PER_AD": 82,
                                 "USER_FEEDS_PER_CUSTOMER": 90,
                                 "SYSTEM_FEEDS_PER_CUSTOMER": 91,
@@ -15368,7 +16285,9 @@
                                 "CUSTOMIZER_TYPE_FORBIDDEN_FOR_FIELD": 150,
                                 "INVALID_CUSTOMIZER_ATTRIBUTE_NAME": 151,
                                 "STORE_MISMATCH": 152,
-                                "MISSING_REQUIRED_IMAGE_ASPECT_RATIO": 153
+                                "MISSING_REQUIRED_IMAGE_ASPECT_RATIO": 153,
+                                "MISMATCHED_ASPECT_RATIOS": 155,
+                                "DUPLICATE_IMAGE_ACROSS_CAROUSEL_CARDS": 156
                               }
                             }
                           }
@@ -15588,7 +16507,9 @@
                                 "PRICE_HEADER_SAME_AS_DESCRIPTION": 29,
                                 "MOBILE_APP_INVALID_APP_ID": 30,
                                 "MOBILE_APP_INVALID_FINAL_URL_FOR_APP_DOWNLOAD_URL": 31,
-                                "NAME_REQUIRED_FOR_ASSET_TYPE": 32
+                                "NAME_REQUIRED_FOR_ASSET_TYPE": 32,
+                                "LEAD_FORM_LEGACY_QUALIFYING_QUESTIONS_DISALLOWED": 33,
+                                "NAME_CONFLICT_FOR_ASSET_TYPE": 34
                               }
                             }
                           }
@@ -15729,7 +16650,13 @@
                                 "UNSPECIFIED": 0,
                                 "UNKNOWN": 1,
                                 "NAME_ALREADY_IN_USE": 2,
-                                "DIMENSION_INVALID": 3
+                                "DIMENSION_INVALID": 3,
+                                "AUDIENCE_SEGMENT_NOT_FOUND": 4,
+                                "AUDIENCE_SEGMENT_TYPE_NOT_SUPPORTED": 5,
+                                "DUPLICATE_AUDIENCE_SEGMENT": 6,
+                                "TOO_MANY_SEGMENTS": 7,
+                                "TOO_MANY_DIMENSIONS_OF_SAME_TYPE": 8,
+                                "IN_USE": 9
                               }
                             }
                           }
@@ -15782,7 +16709,8 @@
                                 "DEVELOPER_TOKEN_NOT_APPROVED": 10,
                                 "INVALID_LOGIN_CUSTOMER_ID_SERVING_CUSTOMER_ID_COMBINATION": 11,
                                 "SERVICE_ACCESS_DENIED": 12,
-                                "ACCESS_DENIED_FOR_ACCOUNT_TYPE": 25
+                                "ACCESS_DENIED_FOR_ACCOUNT_TYPE": 25,
+                                "METRIC_ACCESS_DENIED": 26
                               }
                             }
                           }
@@ -15911,6 +16839,18 @@
                                 "NON_MULTIPLE_OF_MINIMUM_CURRENCY_UNIT": 16,
                                 "TOTAL_BUDGET_AMOUNT_MUST_BE_UNSET_FOR_BUDGET_PERIOD_DAILY": 18,
                                 "INVALID_PERIOD": 19
+                              }
+                            }
+                          }
+                        },
+                        "CampaignConversionGoalErrorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "CampaignConversionGoalError": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CANNOT_USE_CAMPAIGN_GOAL_FOR_SEARCH_ADS_360_MANAGED_CAMPAIGN": 2
                               }
                             }
                           }
@@ -16188,7 +17128,8 @@
                                 "GCLID_DATE_TIME_PAIR_AND_ORDER_ID_BOTH_SET": 20,
                                 "CONVERSION_ALREADY_ENHANCED": 21,
                                 "DUPLICATE_ENHANCEMENT_IN_REQUEST": 22,
-                                "CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT": 23
+                                "CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCEMENT": 23,
+                                "MISSING_ORDER_ID_FOR_WEBPAGE": 24
                               }
                             }
                           }
@@ -16203,6 +17144,20 @@
                                 "DUPLICATE_NAME": 2,
                                 "DUPLICATE_TAG": 3,
                                 "RESERVED_TAG": 4
+                              }
+                            }
+                          }
+                        },
+                        "ConversionGoalCampaignConfigErrorEnum": {
+                          "fields": {},
+                          "nested": {
+                            "ConversionGoalCampaignConfigError": {
+                              "values": {
+                                "UNSPECIFIED": 0,
+                                "UNKNOWN": 1,
+                                "CANNOT_USE_CAMPAIGN_GOAL_FOR_SEARCH_ADS_360_MANAGED_CAMPAIGN": 2,
+                                "CUSTOM_GOAL_DOES_NOT_BELONG_TO_GOOGLE_ADS_CONVERSION_CUSTOMER": 3,
+                                "CAMPAIGN_CANNOT_USE_UNIFIED_GOALS": 4
                               }
                             }
                           }
@@ -16252,7 +17207,9 @@
                                 "UNPARSEABLE_WBRAID": 39,
                                 "UNPARSEABLE_GBRAID": 40,
                                 "EXTERNALLY_ATTRIBUTED_CONVERSION_TYPE_NOT_PERMITTED_WITH_BRAID": 41,
-                                "ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID": 46
+                                "ONE_PER_CLICK_CONVERSION_ACTION_NOT_PERMITTED_WITH_BRAID": 46,
+                                "CUSTOMER_DATA_POLICY_PROHIBITS_ENHANCED_CONVERSIONS": 47,
+                                "CUSTOMER_NOT_ACCEPTED_CUSTOMER_DATA_TERMS": 48
                               }
                             }
                           }
@@ -16298,7 +17255,8 @@
                                 "VALUE_RULES_NOT_SUPPORTED_FOR_CAMPAIGN_TYPE": 10,
                                 "INELIGIBLE_CONVERSION_ACTION_CATEGORIES": 11,
                                 "DIMENSION_NO_CONDITION_USED_WITH_OTHER_DIMENSIONS": 12,
-                                "DIMENSION_NO_CONDITION_NOT_ALLOWED": 13
+                                "DIMENSION_NO_CONDITION_NOT_ALLOWED": 13,
+                                "UNSUPPORTED_CONVERSION_ACTION_CATEGORIES": 14
                               }
                             }
                           }
@@ -16449,7 +17407,9 @@
                                 "HOTEL_CHECK_IN_DATE_RANGE_REVERSED": 134,
                                 "BROAD_MATCH_MODIFIER_KEYWORD_NOT_ALLOWED": 135,
                                 "ONE_AUDIENCE_ALLOWED_PER_ASSET_GROUP": 136,
-                                "AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE": 137
+                                "AUDIENCE_NOT_ELIGIBLE_FOR_CAMPAIGN_TYPE": 137,
+                                "AUDIENCE_NOT_ALLOWED_TO_ATTACH_WHEN_AUDIENCE_GROUPED_SET_TO_FALSE": 138,
+                                "CANNOT_TARGET_CUSTOMER_MATCH_USER_LIST": 139
                               }
                             }
                           }
@@ -16494,7 +17454,9 @@
                                 "UNKNOWN": 1,
                                 "INVALID_CONVERSION_ACTION": 2,
                                 "CONVERSION_ACTION_NOT_ENABLED": 3,
-                                "CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL": 4
+                                "CANNOT_REMOVE_LINKED_CUSTOM_CONVERSION_GOAL": 4,
+                                "CUSTOM_GOAL_DUPLICATE_NAME": 5,
+                                "DUPLICATE_CONVERSION_ACTION_LIST": 6
                               }
                             }
                           }
@@ -16774,8 +17736,10 @@
                                 "asset_set_error",
                                 "bidding_error",
                                 "campaign_criterion_error",
+                                "campaign_conversion_goal_error",
                                 "campaign_customizer_error",
                                 "collection_size_error",
+                                "conversion_goal_campaign_config_error",
                                 "country_code_error",
                                 "criterion_error",
                                 "custom_conversion_goal_error",
@@ -17008,6 +17972,10 @@
                               "type": "CampaignCriterionErrorEnum.CampaignCriterionError",
                               "id": 29
                             },
+                            "campaign_conversion_goal_error": {
+                              "type": "CampaignConversionGoalErrorEnum.CampaignConversionGoalError",
+                              "id": 166
+                            },
                             "campaign_customizer_error": {
                               "type": "CampaignCustomizerErrorEnum.CampaignCustomizerError",
                               "id": 160
@@ -17015,6 +17983,10 @@
                             "collection_size_error": {
                               "type": "CollectionSizeErrorEnum.CollectionSizeError",
                               "id": 31
+                            },
+                            "conversion_goal_campaign_config_error": {
+                              "type": "ConversionGoalCampaignConfigErrorEnum.ConversionGoalCampaignConfigError",
+                              "id": 165
                             },
                             "country_code_error": {
                               "type": "CountryCodeErrorEnum.CountryCodeError",
@@ -17624,7 +18596,8 @@
                                 "IN_DESIGN_CAMPAIGNS_NOT_SET": 21,
                                 "CANNOT_SET_STATUS_TO_GRADUATED": 22,
                                 "CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_SHARED_BUDGET": 23,
-                                "CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET": 24
+                                "CANNOT_CREATE_EXPERIMENT_CAMPAIGN_WITH_CUSTOM_BUDGET": 24,
+                                "STATUS_TRANSITION_INVALID": 25
                               }
                             }
                           }
@@ -20103,7 +21076,8 @@
                               "oneof": [
                                 "third_party_app_analytics",
                                 "data_partner",
-                                "google_ads"
+                                "google_ads",
+                                "hotel_center"
                               ]
                             }
                           },
@@ -20152,6 +21126,13 @@
                             "google_ads": {
                               "type": "GoogleAdsLinkIdentifier",
                               "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "hotel_center": {
+                              "type": "HotelCenterLinkIdentifier",
+                              "id": 9,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -20212,6 +21193,17 @@
                               "options": {
                                 "(google.api.field_behavior)": "IMMUTABLE",
                                 "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "HotelCenterLinkIdentifier": {
+                          "fields": {
+                            "hotel_center_id": {
+                              "type": "int64",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
                             }
                           }
@@ -20295,7 +21287,9 @@
                                 "app_engagement_ad",
                                 "shopping_comparison_listing_ad",
                                 "smart_campaign_ad",
-                                "app_pre_registration_ad"
+                                "app_pre_registration_ad",
+                                "discovery_multi_asset_ad",
+                                "discovery_carousel_ad"
                               ]
                             }
                           },
@@ -20498,6 +21492,14 @@
                             "app_pre_registration_ad": {
                               "type": "google.ads.googleads.v10.common.AppPreRegistrationAdInfo",
                               "id": 50
+                            },
+                            "discovery_multi_asset_ad": {
+                              "type": "google.ads.googleads.v10.common.DiscoveryMultiAssetAdInfo",
+                              "id": 51
+                            },
+                            "discovery_carousel_ad": {
+                              "type": "google.ads.googleads.v10.common.DiscoveryCarouselAdInfo",
+                              "id": 52
                             }
                           }
                         },
@@ -20905,6 +21907,13 @@
                             "(google.api.resource).type": "googleads.googleapis.com/AdGroupAdAssetCombinationView",
                             "(google.api.resource).pattern": "customers/{customer_id}/adGroupAdAssetCombinationViews/{ad_group_id}~{ad_id}~{asset_combination_id_low}~{asset_combination_id_high}"
                           },
+                          "oneofs": {
+                            "_enabled": {
+                              "oneof": [
+                                "enabled"
+                              ]
+                            }
+                          },
                           "fields": {
                             "resource_name": {
                               "type": "string",
@@ -20920,6 +21929,14 @@
                               "id": 2,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "enabled": {
+                              "type": "bool",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "proto3_optional": true
                               }
                             }
                           }
@@ -22507,7 +23524,15 @@
                                 "hotel_callout_asset",
                                 "call_asset",
                                 "price_asset",
-                                "call_to_action_asset"
+                                "call_to_action_asset",
+                                "dynamic_real_estate_asset",
+                                "dynamic_custom_asset",
+                                "dynamic_hotels_and_rentals_asset",
+                                "dynamic_flights_asset",
+                                "discovery_carousel_card_asset",
+                                "dynamic_travel_asset",
+                                "dynamic_local_asset",
+                                "dynamic_jobs_asset"
                               ]
                             }
                           },
@@ -22660,6 +23685,41 @@
                               "options": {
                                 "(google.api.field_behavior)": "IMMUTABLE"
                               }
+                            },
+                            "dynamic_real_estate_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicRealEstateAsset",
+                              "id": 30
+                            },
+                            "dynamic_custom_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicCustomAsset",
+                              "id": 31
+                            },
+                            "dynamic_hotels_and_rentals_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicHotelsAndRentalsAsset",
+                              "id": 32
+                            },
+                            "dynamic_flights_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicFlightsAsset",
+                              "id": 33
+                            },
+                            "discovery_carousel_card_asset": {
+                              "type": "google.ads.googleads.v10.common.DiscoveryCarouselCardAsset",
+                              "id": 34,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE"
+                              }
+                            },
+                            "dynamic_travel_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicTravelAsset",
+                              "id": 35
+                            },
+                            "dynamic_local_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicLocalAsset",
+                              "id": 36
+                            },
+                            "dynamic_jobs_asset": {
+                              "type": "google.ads.googleads.v10.common.DynamicJobsAsset",
+                              "id": 37
                             }
                           }
                         },
@@ -23061,6 +24121,22 @@
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "(google.api.resource_reference).type": "googleads.googleapis.com/AssetGroupProductGroupView"
                               }
+                            },
+                            "asset_group": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/AssetGroup"
+                              }
+                            },
+                            "asset_group_listing_group_filter": {
+                              "type": "string",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/AssetGroupListingGroupFilter"
+                              }
                             }
                           }
                         },
@@ -23101,6 +24177,13 @@
                             "(google.api.resource).pattern": "customers/{customer_id}/assetSets/{asset_set_id}"
                           },
                           "fields": {
+                            "id": {
+                              "type": "int64",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
                             "resource_name": {
                               "type": "string",
                               "id": 1,
@@ -24062,6 +25145,11 @@
                                 "start_date"
                               ]
                             },
+                            "_campaign_group": {
+                              "oneof": [
+                                "campaign_group"
+                              ]
+                            },
                             "_end_date": {
                               "oneof": [
                                 "end_date"
@@ -24264,6 +25352,14 @@
                               "type": "string",
                               "id": 63,
                               "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "campaign_group": {
+                              "type": "string",
+                              "id": 76,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignGroup",
                                 "proto3_optional": true
                               }
                             },
@@ -25944,6 +27040,37 @@
                             }
                           }
                         },
+                        "CampaignGroup": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/CampaignGroup",
+                            "(google.api.resource).pattern": "customers/{customer_id}/campaignGroups/{campaign_group_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "IMMUTABLE",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignGroup"
+                              }
+                            },
+                            "id": {
+                              "type": "int64",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "name": {
+                              "type": "string",
+                              "id": 4
+                            },
+                            "status": {
+                              "type": "google.ads.googleads.v10.enums.CampaignGroupStatusEnum.CampaignGroupStatus",
+                              "id": 5
+                            }
+                          }
+                        },
                         "CampaignLabel": {
                           "options": {
                             "(google.api.resource).type": "googleads.googleapis.com/CampaignLabel",
@@ -26426,6 +27553,27 @@
                                 "ad_group_asset": {
                                   "type": "AdGroupAsset",
                                   "id": 16,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "asset_set": {
+                                  "type": "AssetSet",
+                                  "id": 17,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "asset_set_asset": {
+                                  "type": "AssetSetAsset",
+                                  "id": 18,
+                                  "options": {
+                                    "(google.api.field_behavior)": "OUTPUT_ONLY"
+                                  }
+                                },
+                                "campaign_asset_set": {
+                                  "type": "CampaignAssetSet",
+                                  "id": 19,
                                   "options": {
                                     "(google.api.field_behavior)": "OUTPUT_ONLY"
                                   }
@@ -28594,6 +29742,13 @@
                             "enhanced_conversions_for_leads_enabled": {
                               "type": "bool",
                               "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "google_ads_conversion_customer": {
+                              "type": "string",
+                              "id": 8,
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
@@ -32122,6 +33277,101 @@
                               "options": {
                                 "(google.api.field_behavior)": "OUTPUT_ONLY",
                                 "proto3_optional": true
+                              }
+                            }
+                          }
+                        },
+                        "LeadFormSubmissionData": {
+                          "options": {
+                            "(google.api.resource).type": "googleads.googleapis.com/LeadFormSubmissionData",
+                            "(google.api.resource).pattern": "customers/{customer_id}/leadFormSubmissionData/{lead_form_user_submission_id}"
+                          },
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/LeadFormSubmissionData"
+                              }
+                            },
+                            "id": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "asset": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Asset"
+                              }
+                            },
+                            "campaign": {
+                              "type": "string",
+                              "id": 4,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/Campaign"
+                              }
+                            },
+                            "lead_form_submission_fields": {
+                              "rule": "repeated",
+                              "type": "LeadFormSubmissionField",
+                              "id": 5,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "ad_group": {
+                              "type": "string",
+                              "id": 6,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/AdGroup"
+                              }
+                            },
+                            "ad_group_ad": {
+                              "type": "string",
+                              "id": 7,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/AdGroupAd"
+                              }
+                            },
+                            "gclid": {
+                              "type": "string",
+                              "id": 8,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "submission_date_time": {
+                              "type": "string",
+                              "id": 9,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            }
+                          }
+                        },
+                        "LeadFormSubmissionField": {
+                          "fields": {
+                            "field_type": {
+                              "type": "google.ads.googleads.v10.enums.LeadFormFieldUserInputTypeEnum.LeadFormFieldUserInputType",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
+                              }
+                            },
+                            "field_value": {
+                              "type": "string",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "OUTPUT_ONLY"
                               }
                             }
                           }
@@ -37734,7 +38984,8 @@
                           "oneofs": {
                             "operation": {
                               "oneof": [
-                                "create"
+                                "create",
+                                "remove"
                               ]
                             }
                           },
@@ -37742,6 +38993,13 @@
                             "create": {
                               "type": "google.ads.googleads.v10.resources.BatchJob",
                               "id": 1
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 4,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/BatchJob"
+                              }
                             }
                           }
                         },
@@ -38258,6 +39516,10 @@
                               "type": "google.ads.googleads.v10.resources.CampaignFeed",
                               "id": 63
                             },
+                            "campaign_group": {
+                              "type": "google.ads.googleads.v10.resources.CampaignGroup",
+                              "id": 25
+                            },
                             "campaign_label": {
                               "type": "google.ads.googleads.v10.resources.CampaignLabel",
                               "id": 108
@@ -38638,6 +39900,10 @@
                               "type": "google.ads.googleads.v10.resources.WebpageView",
                               "id": 162
                             },
+                            "lead_form_submission_data": {
+                              "type": "google.ads.googleads.v10.resources.LeadFormSubmissionData",
+                              "id": 192
+                            },
                             "metrics": {
                               "type": "google.ads.googleads.v10.common.Metrics",
                               "id": 4
@@ -38732,6 +39998,7 @@
                                 "campaign_experiment_operation",
                                 "campaign_extension_setting_operation",
                                 "campaign_feed_operation",
+                                "campaign_group_operation",
                                 "campaign_label_operation",
                                 "campaign_operation",
                                 "campaign_shared_set_operation",
@@ -38918,6 +40185,10 @@
                             "campaign_feed_operation": {
                               "type": "CampaignFeedOperation",
                               "id": 27
+                            },
+                            "campaign_group_operation": {
+                              "type": "CampaignGroupOperation",
+                              "id": 9
                             },
                             "campaign_label_operation": {
                               "type": "CampaignLabelOperation",
@@ -39117,6 +40388,7 @@
                                 "campaign_experiment_result",
                                 "campaign_extension_setting_result",
                                 "campaign_feed_result",
+                                "campaign_group_result",
                                 "campaign_label_result",
                                 "campaign_result",
                                 "campaign_shared_set_result",
@@ -39301,6 +40573,10 @@
                             "campaign_feed_result": {
                               "type": "MutateCampaignFeedResult",
                               "id": 27
+                            },
+                            "campaign_group_result": {
+                              "type": "MutateCampaignGroupResult",
+                              "id": 9
                             },
                             "campaign_label_result": {
                               "type": "MutateCampaignLabelResult",
@@ -41397,6 +42673,126 @@
                             },
                             "campaign_feed": {
                               "type": "google.ads.googleads.v10.resources.CampaignFeed",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "CampaignGroupService": {
+                          "options": {
+                            "(google.api.default_host)": "googleads.googleapis.com",
+                            "(google.api.oauth_scopes)": "https://www.googleapis.com/auth/adwords"
+                          },
+                          "methods": {
+                            "MutateCampaignGroups": {
+                              "requestType": "MutateCampaignGroupsRequest",
+                              "responseType": "MutateCampaignGroupsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v10/customers/{customer_id=*}/campaignGroups:mutate",
+                                "(google.api.http).body": "*",
+                                "(google.api.method_signature)": "customer_id,operations"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v10/customers/{customer_id=*}/campaignGroups:mutate",
+                                    "body": "*"
+                                  }
+                                },
+                                {
+                                  "(google.api.method_signature)": "customer_id,operations"
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        "MutateCampaignGroupsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "operations": {
+                              "rule": "repeated",
+                              "type": "CampaignGroupOperation",
+                              "id": 2,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED"
+                              }
+                            },
+                            "partial_failure": {
+                              "type": "bool",
+                              "id": 3
+                            },
+                            "validate_only": {
+                              "type": "bool",
+                              "id": 4
+                            },
+                            "response_content_type": {
+                              "type": "google.ads.googleads.v10.enums.ResponseContentTypeEnum.ResponseContentType",
+                              "id": 5
+                            }
+                          }
+                        },
+                        "CampaignGroupOperation": {
+                          "oneofs": {
+                            "operation": {
+                              "oneof": [
+                                "create",
+                                "update",
+                                "remove"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "update_mask": {
+                              "type": "google.protobuf.FieldMask",
+                              "id": 4
+                            },
+                            "create": {
+                              "type": "google.ads.googleads.v10.resources.CampaignGroup",
+                              "id": 1
+                            },
+                            "update": {
+                              "type": "google.ads.googleads.v10.resources.CampaignGroup",
+                              "id": 2
+                            },
+                            "remove": {
+                              "type": "string",
+                              "id": 3,
+                              "options": {
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignGroup"
+                              }
+                            }
+                          }
+                        },
+                        "MutateCampaignGroupsResponse": {
+                          "fields": {
+                            "results": {
+                              "rule": "repeated",
+                              "type": "MutateCampaignGroupResult",
+                              "id": 2
+                            },
+                            "partial_failure_error": {
+                              "type": "google.rpc.Status",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "MutateCampaignGroupResult": {
+                          "fields": {
+                            "resource_name": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "(google.api.field_behavior)": "REQUIRED",
+                                "(google.api.resource_reference).type": "googleads.googleapis.com/CampaignGroup"
+                              }
+                            },
+                            "campaign_group": {
+                              "type": "google.ads.googleads.v10.resources.CampaignGroup",
                               "id": 2
                             }
                           }
@@ -47093,6 +48489,10 @@
                               "rule": "repeated",
                               "type": "google.ads.googleads.v10.common.UserIdentifier",
                               "id": 17
+                            },
+                            "conversion_environment": {
+                              "type": "google.ads.googleads.v10.enums.ConversionEnvironmentEnum.ConversionEnvironment",
+                              "id": 20
                             }
                           }
                         },
@@ -48327,6 +49727,22 @@
                                   }
                                 }
                               ]
+                            },
+                            "GenerateKeywordHistoricalMetrics": {
+                              "requestType": "GenerateKeywordHistoricalMetricsRequest",
+                              "responseType": "GenerateKeywordHistoricalMetricsResponse",
+                              "options": {
+                                "(google.api.http).post": "/v10/customers/{customer_id=*}:generateKeywordHistoricalMetrics",
+                                "(google.api.http).body": "*"
+                              },
+                              "parsedOptions": [
+                                {
+                                  "(google.api.http)": {
+                                    "post": "/v10/customers/{customer_id=*}:generateKeywordHistoricalMetrics",
+                                    "body": "*"
+                                  }
+                                }
+                              ]
                             }
                           }
                         },
@@ -48522,6 +49938,64 @@
                             "keyword_annotations": {
                               "type": "google.ads.googleads.v10.common.KeywordAnnotations",
                               "id": 6
+                            },
+                            "close_variants": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 7
+                            }
+                          }
+                        },
+                        "GenerateKeywordHistoricalMetricsRequest": {
+                          "fields": {
+                            "customer_id": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "keywords": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 2
+                            },
+                            "historical_metrics_options": {
+                              "type": "google.ads.googleads.v10.common.HistoricalMetricsOptions",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "GenerateKeywordHistoricalMetricsResponse": {
+                          "fields": {
+                            "results": {
+                              "rule": "repeated",
+                              "type": "GenerateKeywordHistoricalMetricsResult",
+                              "id": 1
+                            }
+                          }
+                        },
+                        "GenerateKeywordHistoricalMetricsResult": {
+                          "oneofs": {
+                            "_text": {
+                              "oneof": [
+                                "text"
+                              ]
+                            }
+                          },
+                          "fields": {
+                            "text": {
+                              "type": "string",
+                              "id": 1,
+                              "options": {
+                                "proto3_optional": true
+                              }
+                            },
+                            "close_variants": {
+                              "rule": "repeated",
+                              "type": "string",
+                              "id": 3
+                            },
+                            "keyword_metrics": {
+                              "type": "google.ads.googleads.v10.common.KeywordPlanHistoricalMetrics",
+                              "id": 2
                             }
                           }
                         },
@@ -50678,93 +52152,6 @@
             "cc_enable_arenas": true
           },
           "nested": {
-            "http": {
-              "type": "HttpRule",
-              "id": 72295728,
-              "extend": "google.protobuf.MethodOptions"
-            },
-            "Http": {
-              "fields": {
-                "rules": {
-                  "rule": "repeated",
-                  "type": "HttpRule",
-                  "id": 1
-                },
-                "fully_decode_reserved_expansion": {
-                  "type": "bool",
-                  "id": 2
-                }
-              }
-            },
-            "HttpRule": {
-              "oneofs": {
-                "pattern": {
-                  "oneof": [
-                    "get",
-                    "put",
-                    "post",
-                    "delete",
-                    "patch",
-                    "custom"
-                  ]
-                }
-              },
-              "fields": {
-                "selector": {
-                  "type": "string",
-                  "id": 1
-                },
-                "get": {
-                  "type": "string",
-                  "id": 2
-                },
-                "put": {
-                  "type": "string",
-                  "id": 3
-                },
-                "post": {
-                  "type": "string",
-                  "id": 4
-                },
-                "delete": {
-                  "type": "string",
-                  "id": 5
-                },
-                "patch": {
-                  "type": "string",
-                  "id": 6
-                },
-                "custom": {
-                  "type": "CustomHttpPattern",
-                  "id": 8
-                },
-                "body": {
-                  "type": "string",
-                  "id": 7
-                },
-                "response_body": {
-                  "type": "string",
-                  "id": 12
-                },
-                "additional_bindings": {
-                  "rule": "repeated",
-                  "type": "HttpRule",
-                  "id": 11
-                }
-              }
-            },
-            "CustomHttpPattern": {
-              "fields": {
-                "kind": {
-                  "type": "string",
-                  "id": 1
-                },
-                "path": {
-                  "type": "string",
-                  "id": 2
-                }
-              }
-            },
             "field_behavior": {
               "rule": "repeated",
               "type": "google.api.FieldBehavior",
@@ -50855,6 +52242,93 @@
                   "id": 1
                 },
                 "child_type": {
+                  "type": "string",
+                  "id": 2
+                }
+              }
+            },
+            "http": {
+              "type": "HttpRule",
+              "id": 72295728,
+              "extend": "google.protobuf.MethodOptions"
+            },
+            "Http": {
+              "fields": {
+                "rules": {
+                  "rule": "repeated",
+                  "type": "HttpRule",
+                  "id": 1
+                },
+                "fully_decode_reserved_expansion": {
+                  "type": "bool",
+                  "id": 2
+                }
+              }
+            },
+            "HttpRule": {
+              "oneofs": {
+                "pattern": {
+                  "oneof": [
+                    "get",
+                    "put",
+                    "post",
+                    "delete",
+                    "patch",
+                    "custom"
+                  ]
+                }
+              },
+              "fields": {
+                "selector": {
+                  "type": "string",
+                  "id": 1
+                },
+                "get": {
+                  "type": "string",
+                  "id": 2
+                },
+                "put": {
+                  "type": "string",
+                  "id": 3
+                },
+                "post": {
+                  "type": "string",
+                  "id": 4
+                },
+                "delete": {
+                  "type": "string",
+                  "id": 5
+                },
+                "patch": {
+                  "type": "string",
+                  "id": 6
+                },
+                "custom": {
+                  "type": "CustomHttpPattern",
+                  "id": 8
+                },
+                "body": {
+                  "type": "string",
+                  "id": 7
+                },
+                "response_body": {
+                  "type": "string",
+                  "id": 12
+                },
+                "additional_bindings": {
+                  "rule": "repeated",
+                  "type": "HttpRule",
+                  "id": 11
+                }
+              }
+            },
+            "CustomHttpPattern": {
+              "fields": {
+                "kind": {
+                  "type": "string",
+                  "id": 1
+                },
+                "path": {
                   "type": "string",
                   "id": 2
                 }
@@ -51484,6 +52958,13 @@
                 "lazy": {
                   "type": "bool",
                   "id": 5,
+                  "options": {
+                    "default": false
+                  }
+                },
+                "unverified_lazy": {
+                  "type": "bool",
+                  "id": 15,
                   "options": {
                     "default": false
                   }

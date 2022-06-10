@@ -30,32 +30,32 @@
       },
       "methods": {
         "MutateExperiments": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "EndExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "ListExperimentAsyncErrors": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "GraduateExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "ScheduleExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "PromoteExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         }

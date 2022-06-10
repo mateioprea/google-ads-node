@@ -56,6 +56,7 @@ export {CampaignDraftServiceClient} from './campaign_draft_service_client';
 export {CampaignExperimentServiceClient} from './campaign_experiment_service_client';
 export {CampaignExtensionSettingServiceClient} from './campaign_extension_setting_service_client';
 export {CampaignFeedServiceClient} from './campaign_feed_service_client';
+export {CampaignGroupServiceClient} from './campaign_group_service_client';
 export {CampaignLabelServiceClient} from './campaign_label_service_client';
 export {CampaignServiceClient} from './campaign_service_client';
 export {CampaignSharedSetServiceClient} from './campaign_shared_set_service_client';

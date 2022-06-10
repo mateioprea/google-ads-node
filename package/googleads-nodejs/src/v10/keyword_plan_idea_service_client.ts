@@ -323,6 +323,9 @@ export class KeywordPlanIdeaServiceClient {
       campaignFeedPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}'
       ),
+      campaignGroupPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/campaignGroups/{campaign_group_id}'
+      ),
       campaignLabelPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}'
       ),
@@ -527,6 +530,9 @@ export class KeywordPlanIdeaServiceClient {
       languageConstantPathTemplate: new this._gaxModule.PathTemplate(
         'languageConstants/{criterion_id}'
       ),
+      leadFormSubmissionDataPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/leadFormSubmissionData/{lead_form_user_submission_id}'
+      ),
       lifeEventPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/lifeEvents/{life_event_id}'
       ),
@@ -670,7 +676,7 @@ export class KeywordPlanIdeaServiceClient {
     // Iterate over each of the methods that the service provides
     // and create an API call method for each.
     const keywordPlanIdeaServiceStubMethods =
-        ['generateKeywordIdeas'];
+        ['generateKeywordIdeas', 'generateKeywordHistoricalMetrics'];
     for (const methodName of keywordPlanIdeaServiceStubMethods) {
       const callPromise = this.keywordPlanIdeaServiceStub.then(
         stub => (...args: Array<{}>) => {
@@ -753,6 +759,94 @@ export class KeywordPlanIdeaServiceClient {
   // -------------------
   // -- Service calls --
   // -------------------
+/**
+ * Returns a list of keyword historical metrics.
+ *
+ * List of thrown errors:
+ *   [AuthenticationError]()
+ *   [AuthorizationError]()
+ *   [CollectionSizeError]()
+ *   [HeaderError]()
+ *   [InternalError]()
+ *   [QuotaError]()
+ *   [RequestError]()
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.customer_id
+ *   The ID of the customer with the recommendation.
+ * @param {string[]} request.keywords
+ *   A list of keywords to get historical metrics.
+ *   Not all inputs will be returned as a result of near-exact deduplication.
+ *   For example, if stats for "car" and "cars" are requested, only "car" will
+ *   be returned.
+ *   A maximum of 10,000 keywords can be used.
+ * @param {google.ads.googleads.v10.common.HistoricalMetricsOptions} request.historicalMetricsOptions
+ *   The options for historical metrics data.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing [GenerateKeywordHistoricalMetricsResponse]{@link google.ads.googleads.v10.services.GenerateKeywordHistoricalMetricsResponse}.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v10/keyword_plan_idea_service.generate_keyword_historical_metrics.js</caption>
+ * region_tag:googleads_v10_generated_KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_async
+ */
+  generateKeywordHistoricalMetrics(
+      request?: protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+        protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|undefined, {}|undefined
+      ]>;
+  generateKeywordHistoricalMetrics(
+      request: protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateKeywordHistoricalMetrics(
+      request: protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest,
+      callback: Callback<
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|null|undefined,
+          {}|null|undefined>): void;
+  generateKeywordHistoricalMetrics(
+      request?: protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+          protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsResponse,
+        protos.google.ads.googleads.v10.services.IGenerateKeywordHistoricalMetricsRequest|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'customer_id': request.customer_id || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.generateKeywordHistoricalMetrics(request, options, callback);
+  }
 
  /**
  * Returns a list of keyword ideas.
@@ -3869,6 +3963,42 @@ export class KeywordPlanIdeaServiceClient {
   }
 
   /**
+   * Return a fully-qualified campaignGroup resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} campaign_group_id
+   * @returns {string} Resource name string.
+   */
+  campaignGroupPath(customerId:string,campaignGroupId:string) {
+    return this.pathTemplates.campaignGroupPathTemplate.render({
+      customer_id: customerId,
+      campaign_group_id: campaignGroupId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).customer_id;
+  }
+
+  /**
+   * Parse the campaign_group_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the campaign_group_id.
+   */
+  matchCampaignGroupIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).campaign_group_id;
+  }
+
+  /**
    * Return a fully-qualified campaignLabel resource name string.
    *
    * @param {string} customer_id
@@ -6665,6 +6795,42 @@ export class KeywordPlanIdeaServiceClient {
    */
   matchCriterionIdFromLanguageConstantName(languageConstantName: string) {
     return this.pathTemplates.languageConstantPathTemplate.match(languageConstantName).criterion_id;
+  }
+
+  /**
+   * Return a fully-qualified leadFormSubmissionData resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} lead_form_user_submission_id
+   * @returns {string} Resource name string.
+   */
+  leadFormSubmissionDataPath(customerId:string,leadFormUserSubmissionId:string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.render({
+      customer_id: customerId,
+      lead_form_user_submission_id: leadFormUserSubmissionId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).customer_id;
+  }
+
+  /**
+   * Parse the lead_form_user_submission_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the lead_form_user_submission_id.
+   */
+  matchLeadFormUserSubmissionIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).lead_form_user_submission_id;
   }
 
   /**

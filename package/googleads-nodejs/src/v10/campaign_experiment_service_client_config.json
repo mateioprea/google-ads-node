@@ -30,32 +30,32 @@
       },
       "methods": {
         "CreateCampaignExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "MutateCampaignExperiments": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "GraduateCampaignExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "PromoteCampaignExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "EndCampaignExperiment": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         },
         "ListCampaignExperimentAsyncErrors": {
-          "timeout_millis": 3600000,
+          "timeout_millis": 14400000,
           "retry_codes_name": "idempotent",
           "retry_params_name": "f508f5a5db0dc3b293e7e92574a982742bb7988c"
         }

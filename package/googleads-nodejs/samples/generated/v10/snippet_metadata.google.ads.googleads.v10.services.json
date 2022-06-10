@@ -2724,6 +2724,62 @@
       }
     },
     {
+      "regionTag": "googleads_v10_generated_CampaignGroupService_MutateCampaignGroups_async",
+      "title": "GoogleAdsService mutateCampaignGroups Sample",
+      "origin": "API_DEFINITION",
+      "description": " Creates, updates, or removes campaign groups. Operation statuses are returned.",
+      "canonical": true,
+      "file": "campaign_group_service.mutate_campaign_groups.js",
+      "language": "JAVASCRIPT",
+      "segments": [
+        {
+          "start": 25,
+          "end": 72,
+          "type": "FULL"
+        }
+      ],
+      "clientMethod": {
+        "shortName": "MutateCampaignGroups",
+        "fullName": "google.ads.googleads.v10.services.CampaignGroupService.MutateCampaignGroups",
+        "async": true,
+        "parameters": [
+          {
+            "name": "customer_id",
+            "type": "TYPE_STRING"
+          },
+          {
+            "name": "operations",
+            "type": "TYPE_MESSAGE[]"
+          },
+          {
+            "name": "partial_failure",
+            "type": "TYPE_BOOL"
+          },
+          {
+            "name": "validate_only",
+            "type": "TYPE_BOOL"
+          },
+          {
+            "name": "response_content_type",
+            "type": ".google.ads.googleads.v10.enums.ResponseContentTypeEnum.ResponseContentType"
+          }
+        ],
+        "resultType": ".google.ads.googleads.v10.services.MutateCampaignGroupsResponse",
+        "client": {
+          "shortName": "CampaignGroupServiceClient",
+          "fullName": "google.ads.googleads.v10.services.CampaignGroupServiceClient"
+        },
+        "method": {
+          "shortName": "MutateCampaignGroups",
+          "fullName": "google.ads.googleads.v10.services.CampaignGroupService.MutateCampaignGroups",
+          "service": {
+            "shortName": "CampaignGroupService",
+            "fullName": "google.ads.googleads.v10.services.CampaignGroupService"
+          }
+        }
+      }
+    },
+    {
       "regionTag": "googleads_v10_generated_CampaignLabelService_MutateCampaignLabels_async",
       "title": "GoogleAdsService mutateCampaignLabels Sample",
       "origin": "API_DEFINITION",
@@ -3795,7 +3851,7 @@
       "regionTag": "googleads_v10_generated_CustomerManagerLinkService_MutateCustomerManagerLink_async",
       "title": "GoogleAdsService mutateCustomerManagerLink Sample",
       "origin": "API_DEFINITION",
-      "description": " Creates or updates customer manager links. Operation statuses are returned. List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [DatabaseError]()   [FieldError]()   [FieldMaskError]()   [HeaderError]()   [InternalError]()   [ManagerLinkError]()   [MutateError]()   [QuotaError]()   [RequestError]()",
+      "description": " Updates customer manager links. Operation statuses are returned. List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [DatabaseError]()   [FieldError]()   [FieldMaskError]()   [HeaderError]()   [InternalError]()   [ManagerLinkError]()   [MutateError]()   [QuotaError]()   [RequestError]()",
       "canonical": true,
       "file": "customer_manager_link_service.mutate_customer_manager_link.js",
       "language": "JAVASCRIPT",
@@ -5663,6 +5719,54 @@
       }
     },
     {
+      "regionTag": "googleads_v10_generated_KeywordPlanIdeaService_GenerateKeywordHistoricalMetrics_async",
+      "title": "GoogleAdsService generateKeywordHistoricalMetrics Sample",
+      "origin": "API_DEFINITION",
+      "description": " Returns a list of keyword historical metrics. List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [CollectionSizeError]()   [HeaderError]()   [InternalError]()   [QuotaError]()   [RequestError]()",
+      "canonical": true,
+      "file": "keyword_plan_idea_service.generate_keyword_historical_metrics.js",
+      "language": "JAVASCRIPT",
+      "segments": [
+        {
+          "start": 25,
+          "end": 61,
+          "type": "FULL"
+        }
+      ],
+      "clientMethod": {
+        "shortName": "GenerateKeywordHistoricalMetrics",
+        "fullName": "google.ads.googleads.v10.services.KeywordPlanIdeaService.GenerateKeywordHistoricalMetrics",
+        "async": true,
+        "parameters": [
+          {
+            "name": "customer_id",
+            "type": "TYPE_STRING"
+          },
+          {
+            "name": "keywords",
+            "type": "TYPE_STRING[]"
+          },
+          {
+            "name": "historical_metrics_options",
+            "type": ".google.ads.googleads.v10.common.HistoricalMetricsOptions"
+          }
+        ],
+        "resultType": ".google.ads.googleads.v10.services.GenerateKeywordHistoricalMetricsResponse",
+        "client": {
+          "shortName": "KeywordPlanIdeaServiceClient",
+          "fullName": "google.ads.googleads.v10.services.KeywordPlanIdeaServiceClient"
+        },
+        "method": {
+          "shortName": "GenerateKeywordHistoricalMetrics",
+          "fullName": "google.ads.googleads.v10.services.KeywordPlanIdeaService.GenerateKeywordHistoricalMetrics",
+          "service": {
+            "shortName": "KeywordPlanIdeaService",
+            "fullName": "google.ads.googleads.v10.services.KeywordPlanIdeaService"
+          }
+        }
+      }
+    },
+    {
       "regionTag": "googleads_v10_generated_KeywordPlanService_MutateKeywordPlans_async",
       "title": "GoogleAdsService mutateKeywordPlans Sample",
       "origin": "API_DEFINITION",
@@ -6366,7 +6470,7 @@
       "regionTag": "googleads_v10_generated_ReachPlanService_ListPlannableLocations_async",
       "title": "GoogleAdsService listPlannableLocations Sample",
       "origin": "API_DEFINITION",
-      "description": " Returns the list of plannable locations (for example, countries & DMAs). List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [HeaderError]()   [InternalError]()   [QuotaError]()   [RequestError]()",
+      "description": " Returns the list of plannable locations (for example, countries). List of thrown errors:   [AuthenticationError]()   [AuthorizationError]()   [HeaderError]()   [InternalError]()   [QuotaError]()   [RequestError]()",
       "canonical": true,
       "file": "reach_plan_service.list_plannable_locations.js",
       "language": "JAVASCRIPT",

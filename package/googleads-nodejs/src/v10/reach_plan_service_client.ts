@@ -325,6 +325,9 @@ export class ReachPlanServiceClient {
       campaignFeedPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}'
       ),
+      campaignGroupPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/campaignGroups/{campaign_group_id}'
+      ),
       campaignLabelPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}'
       ),
@@ -528,6 +531,9 @@ export class ReachPlanServiceClient {
       ),
       languageConstantPathTemplate: new this._gaxModule.PathTemplate(
         'languageConstants/{criterion_id}'
+      ),
+      leadFormSubmissionDataPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/leadFormSubmissionData/{lead_form_user_submission_id}'
       ),
       lifeEventPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/lifeEvents/{life_event_id}'
@@ -747,7 +753,7 @@ export class ReachPlanServiceClient {
   // -- Service calls --
   // -------------------
 /**
- * Returns the list of plannable locations (for example, countries & DMAs).
+ * Returns the list of plannable locations (for example, countries).
  *
  * List of thrown errors:
  *   [AuthenticationError]()
@@ -834,7 +840,7 @@ export class ReachPlanServiceClient {
  *   The request object that will be sent.
  * @param {string} request.plannableLocationId
  *   Required. The ID of the selected location for planning. To list the available
- *   plannable location ids use {@link google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations|ReachPlanService.ListPlannableLocations}.
+ *   plannable location IDs use {@link google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations|ReachPlanService.ListPlannableLocations}.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -913,7 +919,7 @@ export class ReachPlanServiceClient {
  * @param {string} request.customer_id
  *   Required. The ID of the customer.
  * @param {string} request.plannableLocationId
- *   Required. The ID of the location, this is one of the ids returned by
+ *   Required. The ID of the location, this is one of the IDs returned by
  *   {@link google.ads.googleads.v10.services.ReachPlanService.ListPlannableLocations|ReachPlanService.ListPlannableLocations}.
  * @param {string} request.currencyCode
  *   Required. Currency code.
@@ -1013,16 +1019,16 @@ export class ReachPlanServiceClient {
  * @param {google.ads.googleads.v10.services.CampaignDuration} request.campaignDuration
  *   Required. Campaign duration.
  * @param {number} request.cookieFrequencyCap
- *   Desired cookie frequency cap that will be applied to each planned product.
+ *   Desired cookie frequency cap to be applied to each planned product.
  *   This is equivalent to the frequency cap exposed in Google Ads when creating
  *   a campaign, it represents the maximum number of times an ad can be shown to
  *   the same user.
- *   If not specified no cap is applied.
+ *   If not specified, no cap is applied.
  *
  *   This field is deprecated in v4 and will eventually be removed.
  *   Please use cookie_frequency_cap_setting instead.
  * @param {google.ads.googleads.v10.services.FrequencyCap} request.cookieFrequencyCapSetting
- *   Desired cookie frequency cap that will be applied to each planned product.
+ *   Desired cookie frequency cap to be applied to each planned product.
  *   This is equivalent to the frequency cap exposed in Google Ads when creating
  *   a campaign, it represents the maximum number of times an ad can be shown to
  *   the same user during a specified time interval.
@@ -3949,6 +3955,42 @@ export class ReachPlanServiceClient {
   }
 
   /**
+   * Return a fully-qualified campaignGroup resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} campaign_group_id
+   * @returns {string} Resource name string.
+   */
+  campaignGroupPath(customerId:string,campaignGroupId:string) {
+    return this.pathTemplates.campaignGroupPathTemplate.render({
+      customer_id: customerId,
+      campaign_group_id: campaignGroupId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).customer_id;
+  }
+
+  /**
+   * Parse the campaign_group_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the campaign_group_id.
+   */
+  matchCampaignGroupIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).campaign_group_id;
+  }
+
+  /**
    * Return a fully-qualified campaignLabel resource name string.
    *
    * @param {string} customer_id
@@ -6745,6 +6787,42 @@ export class ReachPlanServiceClient {
    */
   matchCriterionIdFromLanguageConstantName(languageConstantName: string) {
     return this.pathTemplates.languageConstantPathTemplate.match(languageConstantName).criterion_id;
+  }
+
+  /**
+   * Return a fully-qualified leadFormSubmissionData resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} lead_form_user_submission_id
+   * @returns {string} Resource name string.
+   */
+  leadFormSubmissionDataPath(customerId:string,leadFormUserSubmissionId:string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.render({
+      customer_id: customerId,
+      lead_form_user_submission_id: leadFormUserSubmissionId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).customer_id;
+  }
+
+  /**
+   * Parse the lead_form_user_submission_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the lead_form_user_submission_id.
+   */
+  matchLeadFormUserSubmissionIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).lead_form_user_submission_id;
   }
 
   /**

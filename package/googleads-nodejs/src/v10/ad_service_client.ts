@@ -321,6 +321,9 @@ export class AdServiceClient {
       campaignFeedPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}'
       ),
+      campaignGroupPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/campaignGroups/{campaign_group_id}'
+      ),
       campaignLabelPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}'
       ),
@@ -524,6 +527,9 @@ export class AdServiceClient {
       ),
       languageConstantPathTemplate: new this._gaxModule.PathTemplate(
         'languageConstants/{criterion_id}'
+      ),
+      leadFormSubmissionDataPathTemplate: new this._gaxModule.PathTemplate(
+        'customers/{customer_id}/leadFormSubmissionData/{lead_form_user_submission_id}'
       ),
       lifeEventPathTemplate: new this._gaxModule.PathTemplate(
         'customers/{customer_id}/lifeEvents/{life_event_id}'
@@ -3774,6 +3780,42 @@ export class AdServiceClient {
   }
 
   /**
+   * Return a fully-qualified campaignGroup resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} campaign_group_id
+   * @returns {string} Resource name string.
+   */
+  campaignGroupPath(customerId:string,campaignGroupId:string) {
+    return this.pathTemplates.campaignGroupPathTemplate.render({
+      customer_id: customerId,
+      campaign_group_id: campaignGroupId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).customer_id;
+  }
+
+  /**
+   * Parse the campaign_group_id from CampaignGroup resource.
+   *
+   * @param {string} campaignGroupName
+   *   A fully-qualified path representing CampaignGroup resource.
+   * @returns {string} A string representing the campaign_group_id.
+   */
+  matchCampaignGroupIdFromCampaignGroupName(campaignGroupName: string) {
+    return this.pathTemplates.campaignGroupPathTemplate.match(campaignGroupName).campaign_group_id;
+  }
+
+  /**
    * Return a fully-qualified campaignLabel resource name string.
    *
    * @param {string} customer_id
@@ -6570,6 +6612,42 @@ export class AdServiceClient {
    */
   matchCriterionIdFromLanguageConstantName(languageConstantName: string) {
     return this.pathTemplates.languageConstantPathTemplate.match(languageConstantName).criterion_id;
+  }
+
+  /**
+   * Return a fully-qualified leadFormSubmissionData resource name string.
+   *
+   * @param {string} customer_id
+   * @param {string} lead_form_user_submission_id
+   * @returns {string} Resource name string.
+   */
+  leadFormSubmissionDataPath(customerId:string,leadFormUserSubmissionId:string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.render({
+      customer_id: customerId,
+      lead_form_user_submission_id: leadFormUserSubmissionId,
+    });
+  }
+
+  /**
+   * Parse the customer_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the customer_id.
+   */
+  matchCustomerIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).customer_id;
+  }
+
+  /**
+   * Parse the lead_form_user_submission_id from LeadFormSubmissionData resource.
+   *
+   * @param {string} leadFormSubmissionDataName
+   *   A fully-qualified path representing LeadFormSubmissionData resource.
+   * @returns {string} A string representing the lead_form_user_submission_id.
+   */
+  matchLeadFormUserSubmissionIdFromLeadFormSubmissionDataName(leadFormSubmissionDataName: string) {
+    return this.pathTemplates.leadFormSubmissionDataPathTemplate.match(leadFormSubmissionDataName).lead_form_user_submission_id;
   }
 
   /**

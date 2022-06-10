@@ -16,7 +16,7 @@ RUN apt-get install \
     python3-apt -y
 
 # Download Bazel
-RUN go get github.com/bazelbuild/bazelisk
+RUN go install github.com/bazelbuild/bazelisk@latest
 
 # Clone the googleapis repo
 RUN git clone https://github.com/googleapis/googleapis.git
@@ -32,7 +32,7 @@ FROM node:latest
 ARG GOOGLE_ADS_VERSION
 
 RUN mkdir /package
-
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 WORKDIR /package
 
 COPY --from=protos /go/googleapis/bazel-bin/google/ads/googleads/${GOOGLE_ADS_VERSION}/googleads-nodejs.tar.gz /package
